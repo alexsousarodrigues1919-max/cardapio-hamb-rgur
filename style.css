@@ -1,0 +1,403 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffbb00;
+    color: #333;
+    padding-top: 50px;
+
+}
+
+/* ================= TOPO ================= */
+/* MENU PREMIUM */
+.topo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+
+    background: rgba(48, 48, 48, 0.315);
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+}
+
+/* EFEITO AO ROLAR */
+.topo.scrolled{
+    background: #303030;
+    padding: 10px 30px;
+}
+
+/* BOTÃO MENU MOBILE */
+.menu-toggle{
+    display: none;
+    font-size: 28px;
+    color: #ffbb00;
+    cursor: pointer;
+}
+
+/* MENU NORMAL */
+.menu ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .menu{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #303030;
+
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .menu ul{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu.active{
+        display: flex;
+    }
+}
+
+/* LOGO */
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffbb00;
+}
+
+/* MENU */
+.menu ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #ffbb00d8;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover{
+    color: #ffffff;
+}
+
+/* CARRINHO */
+.carrinho a{
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ffbb00;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carrinho a:hover{
+   background-color: #ffffff;
+   color: #333;
+}
+
+/* ================= CARROSSEL ================= */
+.carrossel{
+    width: 100%;
+    max-width: 1320px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.slides{
+    display: flex;
+    width: 400%;
+    animation: slide 12s infinite;
+}
+
+.slides img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* TEXTO NA IMAGEM */
+.legenda{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.legenda h2{
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ffbb00;
+}
+
+.legenda p{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ANIMAÇÃO */
+@keyframes slide{
+    0%,20%{ margin-left: 0%; }
+    25%,45%{ margin-left: -100%; }
+    50%,70%{ margin-left: -200%; }
+    75%,95%{ margin-left: -300%; }
+    100%{ margin-left: 0%; }
+}
+
+/* ================= CARDÁPIO ================= */
+.cardapio{
+    width: 100%;
+    max-width: 1310px;
+    margin: 20px auto;
+    background-color: #ffffff70;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.cardapio h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.produtos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.card{
+    background-color: #ffbb00;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+/* IMG */
+.card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TEXTO */
+.card h3{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.card p{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* PREÇO */
+.card p strong{
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* BOTÃO */
+.card button{
+    margin-top: 10px;
+    background-color: #fff;
+    color: #ffbb00;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card button:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+/* ================= SOBRE ================= */
+.sobre{
+    max-width: 1310px;
+    margin: 20px auto;
+    background-color: #ffffff70;
+    border-radius: 30px;
+    padding: 40px;
+}
+
+.sobre-conteudo{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.sobre-conteudo img{
+    width: 50%;
+    border-radius: 20px;
+}
+
+.texto{
+    width: 50%;
+}
+
+.texto h2{
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.texto p{
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* ================= CONTATO ================= */
+.contato{
+    max-width: 1310px;
+    margin: 20px auto;
+    background-color: #ffffff70;
+    border-radius: 30px;
+    padding: 40px;
+}
+
+.contato h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contato p{
+    text-align: center;
+}
+
+.contato form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contato input,
+.contato textarea{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.contato button{
+    background-color: #fff;
+    color: #ffbb00;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contato button:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+/* ================= RODAPÉ ================= */
+.rodape{
+    background-color: #303030;
+    color:#ffbb00;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+/* ================= RESPONSIVO ================= */
+
+/* TABLET */
+@media (max-width: 900px){
+    .produtos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+
+    .topo{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu ul{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produtos{
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-conteudo{
+        flex-direction: column;
+    }
+
+    .sobre-conteudo img,
+    .texto{
+        width: 100%;
+    }
+
+    .cardapio h2,
+    .texto h2{
+        font-size: 26px;
+    }
+
+    .texto p{
+        font-size: 16px;
+    }
+}
