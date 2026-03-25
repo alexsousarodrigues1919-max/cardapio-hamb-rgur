@@ -28,7 +28,7 @@ body{
     justify-content: space-between;
     padding: 15px 30px;
 
-    background: rgba(48, 48, 48, 0.315);
+    background: rgb(48, 48, 48);
     backdrop-filter: blur(10px);
 
     transition: 0.3s;
