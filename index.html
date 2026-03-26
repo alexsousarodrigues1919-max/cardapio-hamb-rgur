@@ -12,6 +12,7 @@
       <div class="topo">
         <h1 class="logo">🍔Hambúrguer</h1>
         <div class="menu-toggle">☰</div>
+
         <nav class="menu">
           <ul>
             <li><a href="#carrossel">Home</a></li>
@@ -22,10 +23,11 @@
         </nav>
 
         <div class="carrinho">
-          <a href="#">Carrinho 🛒</a>
+          <a href="#" id="abrirCarrinho">Carrinho 🛒</a>
         </div>
       </div>
 
+      <!-- CARROSSEL -->
       <div class="carrossel" id="carrossel">
         <div class="slides">
           <img
@@ -41,114 +43,99 @@
             src="https://portal-foodjobs.curriculum.com.br/wp-content/uploads/2016/02/clubhouse.jpg"
           />
         </div>
+
         <div class="legenda">
           <h2>Melhor hamburguer da cidade faça o seu pedido agora 🍔</h2>
           <p>Entregamos na sua casa</p>
         </div>
       </div>
 
+      <!-- CARDÁPIO -->
       <div class="cardapio" id="cardapio">
         <h2>Cardápio</h2>
+
         <div class="produtos">
           <div class="card">
             <img
               src="https://www.perdigao.com.br/assets/_images/e242ab5bf6ad0d1a39d03445628a46f16dc95c7e.webp"
-              alt="X-Burguer"
             />
             <h3>X-Burguer</h3>
             <p>Pão, carne, queijo, alface e tomate.</p>
             <p><strong>R$ 18,00</strong></p>
-            <button>Pedir</button>
+            <button onclick="adicionarCarrinho('X-Burguer', 18)">Pedir</button>
           </div>
 
           <div class="card">
             <img
               src="https://marketplace.loji.com.br/storage/uploads/yKSFkJKuzEESvFZinhOmE5us00uV0b8QmMbNyLfj.jpeg"
-              alt="X-Salada"
             />
             <h3>X-Salada</h3>
             <p>Carne, queijo, alface, tomate e maionese especial.</p>
             <p><strong>R$ 20,00</strong></p>
-            <button>Pedir</button>
+            <button onclick="adicionarCarrinho('X-Salada', 20)">Pedir</button>
           </div>
 
           <div class="card">
             <img
               src="https://img.gopage.bio/page-1812/products/12800/4289ef87-0a86-4275-b6df-e236461d0aa3.webp"
-              alt="X-Bacon"
             />
             <h3>X-Bacon</h3>
             <p>Carne, queijo, bacon crocante e molho especial.</p>
             <p><strong>R$ 23,00</strong></p>
-            <button>Pedir</button>
+            <button onclick="adicionarCarrinho('X-Bacon', 23)">Pedir</button>
           </div>
 
           <div class="card">
             <img
               src="https://as1.ftcdn.net/jpg/05/53/75/26/1000_F_553752675_jKhaHM813dYc72mHq5itmN5RSd0zbE8T.jpg"
-              alt="X-Tudo"
             />
             <h3>X-Tudo</h3>
             <p>Carne, bacon, ovo, queijo, presunto e salada.</p>
             <p><strong>R$ 28,00</strong></p>
-            <button>Pedir</button>
+            <button onclick="adicionarCarrinho('X-Tudo', 28)">Pedir</button>
           </div>
 
           <div class="card">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3F5khEWF6ZRSx_6NHvUPqSuvC6MTUt7HPvw&s"
-              alt="X-Frango"
             />
             <h3>X-Frango</h3>
             <p>Filé de frango, queijo, alface e molho especial.</p>
             <p><strong>R$ 22,00</strong></p>
-            <button>Pedir</button>
+            <button onclick="adicionarCarrinho('X-Frango', 22)">Pedir</button>
           </div>
 
           <div class="card">
             <img
               src="https://portal-foodjobs.curriculum.com.br/wp-content/uploads/2016/02/clubhouse.jpg"
-              alt="Hamburguer Artesanal"
             />
             <h3>Artesanal Premium</h3>
             <p>Blend de carne 180g, queijo cheddar e pão brioche.</p>
             <p><strong>R$ 30,00</strong></p>
-            <button>Pedir</button>
+            <button onclick="adicionarCarrinho('Artesanal Premium', 30)">
+              Pedir
+            </button>
           </div>
         </div>
       </div>
 
-      <div class="sobre" id="sobre">
-        <div class="sobre-conteudo">
-          <img
-            src="https://img.freepik.com/fotos-premium/hamburguer-artesanal-com-queijo-bacon-cebola-caramelizada-e-rucula-na-mesa-de-madeira_74692-158.jpg"
-            alt="Hamburguer"
-          />
-
-          <div class="texto">
-            <h2>Sobre</h2>
-            <p>
-              Nosso restaurante de hambúrgueres é mais do que um lugar para
-              comer — é um espaço criado com paixão em cada detalhe. Cada lanche
-              é preparado com ingredientes selecionados, carnes suculentas e
-              receitas especiais que valorizam o sabor e a qualidade.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="contato" id="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato conosco.</p>
-        <form>
-          <input type="text" placeholder="Seu nome" />
-          <textarea placeholder="Sua mensagem"></textarea>
-          <button>Enviar</button>
-        </form>
-      </div>
-
+      <!-- RODAPÉ -->
       <div class="rodape">
         <p>© 2026 Hamburguer. Desenvolvido por Alex Sousa.</p>
+      </div>
+    </div>
+
+    <!-- CARRINHO -->
+    <div class="carrinho-lateral" id="carrinho">
+      <div class="carrinho-header">
+        <h3>Seu Carrinho 🛒</h3>
+        <span class="fechar" id="fecharCarrinho">✖</span>
+      </div>
+
+      <div class="carrinho-itens" id="listaCarrinho"></div>
+
+      <div class="carrinho-footer">
+        <button onclick="finalizarPedido()">Finalizar Pedido</button>
       </div>
     </div>
 
@@ -164,6 +151,114 @@
       window.addEventListener("scroll", () => {
         topo.classList.toggle("scrolled", window.scrollY > 50);
       });
+
+      // ===== CARRINHO =====
+      const abrirCarrinho = document.getElementById("abrirCarrinho");
+      const carrinho = document.getElementById("carrinho");
+      const fecharCarrinho = document.getElementById("fecharCarrinho");
+
+      abrirCarrinho.addEventListener("click", (e) => {
+        e.preventDefault();
+        carrinho.classList.add("ativo");
+      });
+
+      fecharCarrinho.addEventListener("click", () => {
+        carrinho.classList.remove("ativo");
+      });
+
+      // CONTADOR NO BOTÃO
+      const botaoCarrinho = document.getElementById("abrirCarrinho");
+
+      let carrinhoItens = [];
+
+      // ADICIONAR ITEM
+      function adicionarCarrinho(nome, preco) {
+        const itemExistente = carrinhoItens.find((item) => item.nome === nome);
+
+        if (itemExistente) {
+          itemExistente.qtd++;
+        } else {
+          carrinhoItens.push({ nome, preco, qtd: 1 });
+        }
+
+        atualizarCarrinho();
+      }
+
+      // ATUALIZAR
+      function atualizarCarrinho() {
+        const lista = document.getElementById("listaCarrinho");
+        lista.innerHTML = "";
+
+        let total = 0;
+        let totalItens = 0;
+
+        carrinhoItens.forEach((item, index) => {
+          total += item.preco * item.qtd;
+          totalItens += item.qtd;
+
+          const div = document.createElement("div");
+
+          div.innerHTML = `
+      <p>
+        ${item.nome} - R$ ${item.preco},00 <br>
+        <button onclick="diminuirQtd(${index})">➖</button>
+        ${item.qtd}
+        <button onclick="aumentarQtd(${index})">➕</button>
+      </p>
+    `;
+
+          lista.appendChild(div);
+        });
+
+        // TOTAL
+        const totalDiv = document.createElement("h3");
+        totalDiv.innerText = "Total: R$ " + total + ",00";
+        lista.appendChild(totalDiv);
+
+        // CONTADOR NO BOTÃO 🛒
+        botaoCarrinho.innerText = `Carrinho 🛒 (${totalItens})`;
+      }
+
+      // AUMENTAR
+      function aumentarQtd(index) {
+        carrinhoItens[index].qtd++;
+        atualizarCarrinho();
+      }
+
+      // DIMINUIR
+      function diminuirQtd(index) {
+        if (carrinhoItens[index].qtd > 1) {
+          carrinhoItens[index].qtd--;
+        } else {
+          carrinhoItens.splice(index, 1);
+        }
+        atualizarCarrinho();
+      }
+
+      // FINALIZAR
+      function finalizarPedido() {
+        if (carrinhoItens.length === 0) {
+          alert("Carrinho vazio!");
+          return;
+        }
+
+        let mensagem = "Pedido:%0A";
+
+        carrinhoItens.forEach((item) => {
+          mensagem += `- ${item.nome} x${item.qtd} R$ ${item.preco},00%0A`;
+        });
+
+        const total = carrinhoItens.reduce(
+          (soma, item) => soma + item.preco * item.qtd,
+          0,
+        );
+
+        mensagem += `%0ATotal: R$ ${total},00`;
+
+        const telefone = "5599999999999";
+
+        window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
+      }
     </script>
   </body>
 </html>
