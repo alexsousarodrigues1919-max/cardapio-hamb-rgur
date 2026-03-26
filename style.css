@@ -525,3 +525,21 @@ body {
   background: #333;
   color: #fff;
 }
+
+.card .latinha {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card .garafa {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+}
