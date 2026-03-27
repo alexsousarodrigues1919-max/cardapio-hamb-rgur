@@ -200,9 +200,9 @@ body {
 /* ================= CARDÁPIO ================= */
 .cardapio {
   width: 100%;
-  max-width: 1310px;
+  max-width: 1460px;
   margin: 20px auto;
-  background-color: #ffffff70;
+  background-color: #ffffff62;
   border-radius: 30px;
   padding: 30px;
 }
@@ -237,7 +237,7 @@ body {
 /* IMG */
 .card img {
   width: 100%;
-  height: 180px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -534,7 +534,7 @@ body {
 }
 
 .card .latinha {
-  width: 400px;
+  width: 100%;
   height: 400px;
   object-fit: cover;
   margin: 0 auto;
@@ -543,10 +543,54 @@ body {
 }
 
 .card .garafa {
-  width: 400px;
+  width: 100%;
   height: 400px;
   object-fit: cover;
   margin: 0 auto;
   display: block;
   margin-bottom: 10px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: #303030;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TEXTO */
+.loading p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffbb00;
+  margin-bottom: 20px;
+}
+
+/* SPINNER */
+.loading::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 6px solid #ffbb00;
+  border-top: 6px solid transparent;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
