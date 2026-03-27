@@ -26,114 +26,127 @@ body {
   justify-content: space-between;
 
   padding: 15px 30px;
-  background: #303030;
+
+  background: rgb(48, 48, 48);
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
 }
 
 /* EFEITO AO ROLAR */
 .topo.scrolled {
+  background: #303030;
   padding: 10px 30px;
 }
 
-/* ESQUERDA */
+/* BOTÃO MENU (ESQUERDA) */
 .menu-toggle {
+  display: none;
   font-size: 28px;
   color: #ffbb00;
   cursor: pointer;
-  z-index: 3;
+  z-index: 2;
 }
 
-/* LOGO CENTRAL REAL */
+/* LOGO CENTRAL */
 .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffbb00;
+
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffbb00;
-  font-size: 24px;
-  z-index: 1;
 }
 
-/* DIREITA */
-.carrinho {
-  z-index: 3;
-}
-
-/* ESCONDE MENU DESKTOP */
+/* MENU */
 .menu {
-  position: absolute;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  background: #303030;
-
-  display: none;
-  flex-direction: column;
-  padding: 20px 0;
-}
-
-/* MENU ATIVO */
-.menu.active {
-  display: flex;
+  transition: 0.3s;
 }
 
 .menu ul {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .menu a {
-  color: #ffbb00;
   text-decoration: none;
+  color: #ffbb00d8;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #ffffff;
+}
+
+/* CARRINHO (DIREITA) */
+.carrinho {
+  z-index: 2;
 }
 
 .carrinho a {
-  color: #f8f8f8;
-  text-decoration: none;
+  font-size: 16px;
   font-weight: bold;
+  text-decoration: none;
   background-color: #ffbb00;
-  padding: 10px 20px;
+  color: #ffffff;
+  padding: 10px 15px;
   border-radius: 10px;
+  transition: 0.3s;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center;
   gap: 10px;
 }
 
-/* ================= DESKTOP ================= */
-@media (min-width: 769px) {
-
-  .menu {
-    position: static;
-    display: block;
-    background: none;
-    padding: 0;
-  }
-
-  .menu ul {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  /* 🔥 ESSA LINHA RESOLVE TUDO */
-  .menu {
-    position: absolute;
-    left: 20px;
-  }
+.carrinho a:hover {
+  background-color: #ffffff;
+  color: #333;
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
+  .topo {
+    padding: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
   .logo {
+    font-size: 22px;
+    position: static;
+    transform: none;
+  }
+
+  .carrinho a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* MENU MOBILE */
+  .menu {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #303030;
+
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
 }
 
